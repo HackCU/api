@@ -14,7 +14,8 @@
             "debugOptions": [
                 "RedirectOutput",
                 "Django"
-            ]
+            ],
+            
         },
     ]
 }

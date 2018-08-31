@@ -1,4 +1,4 @@
 [flake8]
-exclude = build,.git,.tox,./django/utils/six.py,./django/conf/app_template/*,./tests/.env,./env,./hackcu_api/settings.py,./*/migrations
+exclude = build,.git,.tox,./django/utils/six.py,./django/conf/app_template/*,./tests/.env,./env,./hackapi/settings.py,./variables.py,./*/migrations
 ignore = W601,F403
 max-line-length = 120
