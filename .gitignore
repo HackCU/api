@@ -3,3 +3,5 @@ env
 *.pyc
 .vscode
 __pycache__
+server.sh
+restart.sh

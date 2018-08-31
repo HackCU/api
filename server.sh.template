@@ -1,0 +1,10 @@
+#!/bin/bash
+export DEBUG="false"
+# Optional: Slack  token and team
+export SLACK="TOKEN"
+# Domain where running
+export DOMAIN="api.hackcu.org"
+# (optional) Database URL
+# export DATABASE_URL=""
+
+./env/bin/gunicorn --workers 3 --log-file=gunicorn.log --bind unix:api.sock hackapi.wsgi:application

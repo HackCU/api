@@ -24,6 +24,44 @@ Needs: Python 3.X, virtualenv
 - `python manage.py runserver`
 - Sit back, relax and enjoy. That's it!
 
+### Production environment
+
+Inspired on this [tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04) to understand and set it up as in our server.
+
+- Set up (see above)
+- Create server.sh from template: `cp server.sh.template server.sh`
+- `chmod +x server.sh`
+- Edit variables to match your environment and add extra if required (see environment variables available above)
+- Create restart.sh from template: `cp restart.sh.template restart.sh`
+- `chmod +x restart.sh`
+- Edit variables to match your environment and add extra if required (see environment variables available above)
+- Run `restart.sh`. This will update the database, dependecies and static files.
+- Set up Systemd (read next section)
+
+#### Set up gunicorn service in Systemd
+Needs: Systemd.
+
+- Edit this file `/etc/systemd/system/api.service`
+- Add this content
+```
+[Unit]
+Description=api daemon
+After=network.target
+
+[Service]
+User=user
+Group=www-data
+WorkingDirectory=/home/user/project_folder
+ExecStart=/home/user/project_folder/server.sh >>/home/user/project_folder/out.log 2>>/home/user/project_folder/error.log
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+- Replace `user` for your linux user.
+- Replace `project_folder` by the name of the folder where the project is located
+- Create and enable service: `sudo systemctl start api && sudo systemctl enable api`
 
 ## Enviroment variables
 
