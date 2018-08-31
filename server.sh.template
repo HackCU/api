@@ -5,6 +5,8 @@ export SLACK="TOKEN"
 # Domain where running
 export DOMAIN="api.hackcu.org"
 # (optional) Database URL
-# export DATABASE_URL=""
+export DATABASE_URL=""
+# Optional: SendGrid token
+export SENDGRID="TOKEN"
 
 ./env/bin/gunicorn --workers 3 --log-file=gunicorn.log --bind unix:api.sock hackapi.wsgi:application
