@@ -5,4 +5,4 @@ DEBUG = os.environ.get('DEBUG', 'true') == 'true'
 
 # CORS config
 
-CORS_ORIGIN_REGEX_WHITELIST = (r'^(https?://)?(\w+\.)?hackcu\.org$', )
+CORS_ORIGIN_REGEX_WHITELIST = (r'^(https?://)?(\w+\.)?hackcu\.org$', r'^(https?://)?(\w+\.)?localhost$',)
