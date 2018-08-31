@@ -70,6 +70,7 @@ WantedBy=multi-user.target
 - **DATABASE_URL**(optional): URL to connect to the database. If not sets, defaults to django default SQLite database. See schema for different databases [here](https://github.com/kennethreitz/dj-database-url#url-schema).
 - **DOMAIN**(optional): Domain where app will be running. Default: None
 - **SLACK**(optional): Slack token to invite hackers automatically on confirmation. You can obtain it [here](https://api.slack.com/custom-integrations/legacy-tokens)
+- **SENDGRID**(optional): SendGrid API Key. You can manage them [here](https://app.sendgrid.com/settings/api_keys).  Note that if you don't add it the system will write all emails in the filesystem for preview.
 
 
 # Want to Contribute?

@@ -13,9 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
+from sendgrid import views
+from django.urls import path
 
 urlpatterns = [
-    path('slack/', include('slack.urls')),
-    path('sendgrid/', include('sendgrid.urls')),
+    path('events/', views.sendgrid_events),
 ]
