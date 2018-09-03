@@ -5,6 +5,8 @@
 </p>
 <br>
 
+[![Build Status](https://travis-ci.org/HackCU/api.svg?branch=master)](https://travis-ci.org/HackCU/api)
+
 API for internal resources
 
 ## Setup
