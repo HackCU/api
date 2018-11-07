@@ -18,4 +18,5 @@ from django.urls import path, include
 urlpatterns = [
     path('slack/', include('slack.urls')),
     path('sendgrid/', include('sendgrid.urls')),
+    path('sheets/', include('sheets.urls')),
 ]
