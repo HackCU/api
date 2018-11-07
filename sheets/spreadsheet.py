@@ -1,5 +1,4 @@
 # HACK CU Api supplementary function
-import requests
 import json
 import time
 # keep track of time when request is made to return json of the next few events
