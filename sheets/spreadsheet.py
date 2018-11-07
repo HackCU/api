@@ -21,6 +21,7 @@ def sheet():
         ret['events'].append(first[i])
     for i in second:
         ret['events'].append(second[i])
+
     return ret
 
 # slower way (commented out) - Google Sheets api
