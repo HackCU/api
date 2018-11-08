@@ -24,4 +24,4 @@ def slack_invite(request):
         raise ValidationError('\'email\' field is needed')
     sc = _get_client()
     r = sc.api_call("users.admin.invite", email=email, active=True)
-    return Response(r)  
+    return Response(r)
