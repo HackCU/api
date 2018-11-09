@@ -12,7 +12,7 @@ LIST_URL = "https://api.sendgrid.com/v3/contactdb/lists/{list_id}/recipients/{re
 
 
 @api_view(['POST', ])
-def sendgrid_events(request):
+def sendgrid_events(request, format='json'):
     """
     Add email to promotional events sendgrid list. Example body: `{"email":"test@hackcu.org"}`
     """
@@ -29,7 +29,7 @@ def sendgrid_events(request):
     response = requests.post(ADD_URL, headers=header, json=data)
     recipient = response.json().get('persisted_recipients', [None, ])[0]
     if not recipient:
-        Response({'ok':False, 'message':'Not able to connect'})
+        Response({'ok': False, 'message': 'Not able to connect'})
     requests.post(LIST_URL.format(list_id=HACKCU_INTEREST_LIST, recipient_id=recipient),
                   headers=header)
-    return Response({'ok':True, 'message':'Added successfully'})
+    return Response({'ok': True, 'message': 'Added successfully'})
