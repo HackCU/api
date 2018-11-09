@@ -15,7 +15,7 @@ def _get_client():
 
 
 @api_view(['POST', ])
-def slack_invite(request):
+def slack_invite(request, format='json'):
     """
     Send slack invite. Only POST request. Example body: `{"email":"test@hackcu.org"}`
     """

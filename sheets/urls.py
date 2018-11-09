@@ -19,5 +19,5 @@ from sheets import views
 from django.urls import path
 
 urlpatterns = [
-    path('events/', views.eventsRep),
+    path('events/', views.events),
 ]

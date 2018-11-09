@@ -12,7 +12,7 @@ LIST_URL = "https://api.sendgrid.com/v3/contactdb/lists/{list_id}/recipients/{re
 
 
 @api_view(['POST', ])
-def sendgrid_events(request):
+def sendgrid_events(request, format='json'):
     """
     Add email to promotional events sendgrid list. Example body: `{"email":"test@hackcu.org"}`
     """

@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
     path('slack/', include('slack.urls')),
     path('sendgrid/', include('sendgrid.urls')),
     path('sheets/', include('sheets.urls')),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns, allowed=['html', 'json'])
