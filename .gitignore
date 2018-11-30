@@ -8,3 +8,4 @@ restart.sh
 *.log
 staticfiles
 .idea
+cache

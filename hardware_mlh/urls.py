@@ -13,14 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path, include
-from rest_framework.urlpatterns import format_suffix_patterns
+from hardware_mlh import views
+from django.urls import path
 
 urlpatterns = [
-    path('slack/', include('slack.urls')),
-    path('sendgrid/', include('sendgrid.urls')),
-    path('sheets/', include('sheets.urls')),
-    path('hardware/', include('hardware_mlh.urls')),
+    path('items/', views.hardware_items),
 ]
-
-urlpatterns = format_suffix_patterns(urlpatterns, allowed=['html', 'json'])
