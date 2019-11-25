@@ -7,6 +7,7 @@ import requests
 
 # google sheets export creation in python
 
+
 def event_parse(sheets_id):
     sheets_url = 'https://docs.google.com/spreadsheets/d/%s/export?format=csv' % sheets_id
     decoded_csv = requests.get(sheets_url).content.decode('utf-8')
