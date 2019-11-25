@@ -14,6 +14,3 @@ from sheets import spreadsheet
 def events(request, format='json'):
     res = spreadsheet.event_parse(settings.EVENTS_SPREADSHEETS_ID)
     return Response(res)
-
-# straightforward API
-# return a JsonResponse here based on the result of the request to the live page.

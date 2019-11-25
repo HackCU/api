@@ -1,14 +1,11 @@
-# CU Api supplementary function
+# HackCU API supplementary function
 # import time
 # keep track of time when request is made to return json of the next few events
-# import pandas as pd
 import csv
 
 import requests
 
-# use the csv module here!
 # google sheets export creation in python
-
 
 def event_parse(sheets_id):
     sheets_url = 'https://docs.google.com/spreadsheets/d/%s/export?format=csv' % sheets_id
