@@ -65,6 +65,12 @@ WantedBy=multi-user.target
 - Replace `project_folder` by the name of the folder where the project is located
 - Create and enable service: `sudo systemctl start api && sudo systemctl enable api`
 
+#### Deploy new version
+
+- `git pull`
+- `./restart.sh`
+- `sudo service api restart`
+
 ## Enviroment variables
 
 - **DEBUG**(optional): Set to `false` to disable debug mode on production.
