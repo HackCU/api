@@ -1,9 +1,10 @@
 
 <br>
 <p align="center">
-  <img alt="HackCU IV" src="https://github.com/HackCU/splash-page/blob/master/img/hackcu_black.png" width="200"/>
+  <img alt="HackCU IV" src="https://raw.githubusercontent.com/HackCU/HackCU/master/assets/images/hackcu2020logo.png" width="200"/>
 </p>
 <br>
+
 
 [![Build Status](https://travis-ci.org/HackCU/api.svg?branch=master)](https://travis-ci.org/HackCU/api)
 
