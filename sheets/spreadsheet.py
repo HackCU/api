@@ -12,17 +12,18 @@ def event_parse(sheets_id):
     sheets_url = 'https://docs.google.com/spreadsheets/d/%s/export?format=csv' % sheets_id
     decoded_csv = requests.get(sheets_url).content.decode('utf-8')
     reader = csv.DictReader(decoded_csv.splitlines(), delimiter=',')
-    r = {'day1': [], 'day2': []}
-    day = 'day1'
+    data = {}
+    day = None
 
     for row in reader:
 
-        if row['Start'] == "Day 2":
-            day = 'day2'
-            continue
-
-        if row['Start'] == "Start":
-            continue
-
-        r[day].append(row)
-    return r
+        if row['Start'].startswith("Day "):
+            # Day 1 -> day1
+            day = row['Start'].replace("Day ", "day")
+            data[day] = []
+        else:
+            if not day:
+                raise Error('No day!')
+            data[day].append(row)
+        
+    return data
