@@ -2,7 +2,7 @@
 # import time
 # keep track of time when request is made to return json of the next few events
 import csv
-
+from django.http import HttpResponseServerError
 import requests
 
 # google sheets export creation in python
@@ -23,7 +23,7 @@ def event_parse(sheets_id):
             data[day] = []
         else:
             if not day:
-                raise Error('No day!')
+                return HttpResponseServerError('No day!')
             data[day].append(row)
         
     return data
