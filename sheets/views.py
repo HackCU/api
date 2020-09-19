@@ -1,6 +1,5 @@
 # from django.conf import settings
 from django.conf import settings
-from django.views.decorators.cache import cache_page
 from rest_framework.decorators import api_view
 
 from sheets import spreadsheet
