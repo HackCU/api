@@ -6,7 +6,6 @@ from rest_framework.decorators import api_view
 from sheets import spreadsheet
 
 
-@cache_page(60 * 3)
 # name is in first column
 @api_view(['GET', ])
 # takes care of any invalid responses
